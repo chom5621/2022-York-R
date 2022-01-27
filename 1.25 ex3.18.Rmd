@@ -1,0 +1,54 @@
+---
+title: "Ex 3.18"
+author: "Jo, Munsun"
+date: '2022 1 25 '
+output: rmarkdown::github_document
+---
+
+
+## 1. Create Table using data.frame
+```{r}
+state=c('Connecticut','Maine','Maassachusetts','New Hampshire','Rhode Island','Vermont')
+Total_Teachers=c(42,17,69,15,11,8)
+popu=c(35,13,64,13,11,6)
+df=data.frame(state, Total_Teachers, popu)
+```
+
+```{r}
+delta=round(df$popu/sum(df$popu),2)
+df=data.frame(df, delta)
+```
+
+## Suppose probability sampling *without* replacement of size $n=2$ are selected from u=c(42,17,69,15,11,8)
+## with selection probabilities specified as delta which is proportional to popu, show hat_tao is an unbiased estimator of tao. 
+```{r}
+u=c(47,17,69,15,11,8)
+popu=c(35,13,64,13,11,6)
+delta=round(popu/sum(popu), 2)
+sample=t((combn(1:6, 2))) # Without Replacement
+```
+
+## Calculate probability of sample --- ps
+```{r}
+ps=rep(0, dim(sample)[1])
+ps=delta[sample[,1]]*delta[sample[,2]]/(1-delta[sample[,1]])+delta[sample[,2]]*delta[sample[,1]]/(1-delta[sample[,2]])
+```
+
+## hat_tau using pi; now calculate pi
+```{r}
+pi=rep(0, length(u))
+for (i in 1:length(u)){
+  pi[i]=sum(ps[sample[,1]==i]+sum(ps[sample[,2]==i]))
+}
+```
+
+## Calculate hat_tau using pi
+```{r}
+hat_tau=rep(0,15)
+hat_tau=u[sample[,1]]/pi[sample[,1]]+u[sample[,2]]/pi[sample[,2]]
+```
+
+## Expectation of hat_tau
+```{r}
+ps%*%hat_tau
+```
