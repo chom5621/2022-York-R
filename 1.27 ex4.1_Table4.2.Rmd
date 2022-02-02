@@ -1,0 +1,65 @@
+---
+title: "Ex4.1_Table4.2"
+author: "Jo, Munsun"
+date: '2022 1 27 '
+output: rmarkdown::github_document
+---
+## List all possible SRS (default without replacement) of size n=2 that can be selected from 
+## the population {0,1,2,3,4}, N=5, n=2
+## create all possible samples and calculate the corresponding sample means
+```{r}
+u=c(0,1,2,3,4)
+mean(u)
+sum((u-mean(u))^2)/(length(u))
+sample=t(combn(0:4,2))
+```
+
+## m=total number of distinct samples
+```{r}
+m=dim(sample)[1] 
+ybar=rep(0,m)
+for (i in 1:m){
+  ybar[i]=mean(sample[i,])
+  }
+df=data.frame(sample, ybar)
+mean(ybar)
+sum((ybar-mean(ybar))^2)/length(ybar)
+```
+
+### how to reproduce Textbook Table 4.2 on page 81
+```{r}
+u=c(1,2,3,4)
+N=length(u)
+n=2
+sample=t(combn(1:4,n))
+```
+
+## m=total number of distinct samples
+```{r}
+m=dim(sample)[1] 
+ps=rep(1/m,m)
+```
+
+```{r}
+hat_tau=rep(0,m)
+for (i in 1:m){hat_tau[i]=sum(sample[i,])*N/n}
+ybar=rep(0,m)
+for (i in 1:m){ybar[i]=mean(sample[i,])}
+ss=rep(0,m)
+for (i in 1:m){ss[i]=var(sample[i,])}
+hat_Vybar=rep(0,m)
+```
+
+## fpc=the finite population correction
+```{r}
+fpc=1-n/N 
+for (i in 1:m){hat_Vybar[i]=fpc*ss[i]/n}
+```
+
+```{r}
+df=data.frame(sample, ps, hat_tau, ybar, ss, hat_Vybar)
+```
+
+
+
+```
