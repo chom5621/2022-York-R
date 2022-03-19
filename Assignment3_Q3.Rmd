@@ -1,0 +1,87 @@
+---
+title: "Munsun Jo, 219477843, Jo"
+author: 'Q3'
+date: 'Textbook page 159 Exercise 5.31'
+output: html_document
+---
+
+The population of the practicing anesthesiology was stratified into three groups: 
+
+- anesthesiologists (composing approximately 50% of the population), 
+- anesthesiology residents (composing approximately 10% of the population), and 
+- nurse anesthetists (composing approximately 40% of the population).
+
+### a) Estimate the population proportion of those who think they have worked beyond a safe limit. 
+
+- $N_i$: strata size for i=1,2,3
+- $n_i$: sample size for i=1,2,3
+- $p_i$: strata probability for i=1,2,3
+
+To calculate the population proportion of anesthesiologists,
+
+$\hat{p}=\frac{\sum N_i p_i}{N}$
+$=\frac{(1330\cdot0.687)+(165\cdot0.824)+(1100\cdot0.782)}{2595}=\frac{1909.87}{2595}\approx0.7360$.
+
+Thus the population proportion of anesthesiologists is 0.7360.
+
+### Calculate a bound on the error of estimation.
+
+- $N=N_1+N_2+N_3=2595$
+
+The variance of the estimated proportion is
+
+$V(\hat{p})=\frac{1}{N^2}\sum N^2_i(1-\frac{n_i}{N_i})(\frac{p_i(1-p_i)}{n_i-1})$
+$=\frac{1}{2595}(1330^2(1-\frac{913}{1330})(\frac{0.687\cdot(1-0.687)}{913-1})+165^2(1-\frac{136}{165})(\frac{0.824\cdot(1-0.824)}{136-1})+1100^2(1-\frac{860}{1100})(\frac{0.782\cdot(1-0.782)}{860-1}))$
+$\approx0.000028$.
+
+The bound on the estimation is
+
+$B=2\sqrt{V(\hat{p})}\approx0.0106$.
+
+Hence, the bound on the error of estimation is 0.0106.
+
+Then the estimate of proportion with
+a bound on the error of estimation, is given by $0.7360 \pm 0.0106$.
+
+### b) Do anesthesiologists differ significantly from residents in this matter?
+
+The difference between the percentage of anesthesiologists and residents who think they have worked beyond a safe limit is 
+$0.824-0.687=0.137$.
+
+The variance of the estimated proportion is
+
+$V(\hat{p})=\frac{1}{1495^2}(1330^2(1-\frac{913}{1330})(\frac{0.687\cdot(1-0.687)}{913-1})+165^2(1-\frac{136}{165})(\frac{0.824\cdot(1-0.824)}{136-1}))$
+$\approx0.000061$.
+
+The bound on the estimation is
+
+$B=2\sqrt{V(\hat{p})}\approx0.0156$.
+
+Hence, the bound on the error of estimation is 0.0156.
+
+Then the estimate of proportion with a bound on the error of estimation, is given by $0.137 \pm 0.0156$.
+
+Thus anesthesiologists differ from residents in this matter.
+
+### c) Do anesthesiologists differ significantly from nurse anesthetists in this matter?
+
+The difference between the percentage of anesthesiologists and nurse anesthetists who think they have worked beyond a safe limit is 
+$0.782-0.687=0.095$.
+
+The variance of the estimated proportion is
+
+$V(\hat{p})=\frac{1}{2430^{2}}(1330^{2}(1-\frac{913}{1330})(\frac{0.687\cdot(1-0.687)}{913-1})+1100^{2}(1-\frac{860}{1100})(\frac{0.782\cdot(1-0.782)}{860-1}))$
+$\approx0.000031$.
+
+The bound on the estimation is
+
+$B=2\sqrt{V(\hat{p})}\approx0.01114$.
+
+Hence, the bound on the error of estimation is 0.01114.
+
+Then the estimate of proportion with a bound on the error of estimation, is given by $0.095 \pm 0.01114$.
+
+Thus anesthesiologists differ but not that much from nurse anesthesiologists in this matter.
+
+
+
