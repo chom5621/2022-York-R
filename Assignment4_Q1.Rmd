@@ -1,0 +1,27 @@
+---
+title: "Munsun Jo, 219477843, Jo"
+author: 'Q1'
+date: 'Exercise 6.8 of the textbook (page 206 regarding the American Housing Survey)'
+output: html_document
+---
+
+### 1) Estimate the percentage change in mean typical values of houses from 1994 to 2002 for the 47 MSAs covered by the American Housing Survey, with an appropriate margin of error.
+
+Let $y'$ be typical values of 2002 and $x'$ be typical values of 1994.
+
+Then the percentage change in mean typical values is $r=\frac{\bar{y'}}{\bar{x'}}=\frac{2057845}{1432916}\approx1.44$.
+
+Since $s^2_r=\frac{\sum (y'_i-rx'_i)^2}{n-1}\approx242975.1562$,
+
+The margin of error is $B=2\sqrt{\hat{Var(r)}}=2\sqrt{(1 - \frac{n}{N})(\frac{1}{\bar{x'}}^2 )\frac{s^2_r}{n}}=2\sqrt{(1 - \frac{13}{47})(\frac{1}{1432916}^2 )\frac{242975.1562^2}{13}}\approx0.08$.
+
+### 2) Compare this result to the percentage change in the monthly cost.
+
+Thus, any value of $R$ in the interval $1.44 \pm 0.08$ would be consistent
+with the observed data (thinking in terms of an approximate 95% confidence interval), assuming the data came from a random sample of the 47 MSAs. 
+
+In other words, the typical values for housing in MSAs is estimated to have increased approximately 44%, plus or minus 8%, in the eight-year period from 1994 to 2002.
+
+By comparison, the typical monthly cost for housing in MSAs is estimated to have increased approximately 30%, plus or minus 5%, in the eight-year period from 1994 to 2002.
+
+Hence, the percentage change in the mean of houses in MSAs is increased more in typical values than the typical monthly cost, and also the margin of error was more in typical values.
