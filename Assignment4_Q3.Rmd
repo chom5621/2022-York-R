@@ -1,0 +1,24 @@
+---
+title: "Munsun Jo, 219477843, Jo"
+author: 'Q3'
+date: 'Exercise 7.6 of the textbook (page 244-245)'
+output: html_document
+---
+
+### 1) Estimate $\mu$. 
+
+$\hat{\mu}=\frac{\sum observations}{n}=\frac{12.00+11.97+...+12.02+12.04}{36}=\frac{430.04}{36}\approx11.9456$
+
+Thus, the estimation of $\mu$ is 11.9456 (ounces).
+
+### 2) Place a bound on the error of estimation. Assume $N=1800$.
+
+$Var(s^2)=\frac{(X_i-\hat{\mu})}{n-1}=\frac{(12.00-11.9456)^2+(11.97-11.9456)^2+...+(12.02-11.9456)^2+(12.04-11.9456)^2}{36-1}\approx0.0058$
+
+$\hat{Var}({\hat{\mu}})=(1-\frac{n}{N})\frac{s^2}{n}=(1-\frac{36}{1800})\frac{0.0058}{36}\approx0.000159$
+
+The bound of error of estimation is
+
+$B=2\sqrt{\hat{Var}({\hat{\mu}})}=2\sqrt{0.000159}\approx0.02513$.
+
+Therefore, the average amount of fill lies within the bound of error 0.02513 (ounces) of the estimation.
