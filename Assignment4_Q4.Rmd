@@ -1,0 +1,33 @@
+---
+title: "Munsun Jo, 219477843, Jo"
+author: "Q4"
+date: 'Exercise 8.2 of the textbook (page 279)'
+output: html_document
+---
+
+### 1) Estimate the average repair cost per saw for the past month. 
+
+Let the industry $i$ denotes the $i$th cluster, the cluster sizes $m_i, i = 1, ..., 20$ are the number of saws, and $y_i$ are the total repair cost.
+
+Also $N=96$ and $n=20$, but $M$ is unknown.
+
+Then the average is
+
+$\bar{y} = \frac{\sum yi}{\sum m_i} = \frac{2565}{130} \approx 19.73$.
+
+Thus, the estimation of the average repair cost per saw for the past month is 19.73.
+
+
+### 2) Place a bound on the error of estimation.
+
+The estimated variance of $\hat{y}$ is $\hat{Var}(\bar{y}) = (\frac{N − n} {Nn\bar{M^2}}) s^2_r$.
+
+M is unknown but approximated by $\bar{m} = \frac{\sum m_i}{n} = \frac{130}{20} = 6.5$.
+
+And $s^2_r$ is $s^2_r = \frac{1}{n − 1} \sum(y_i − \bar{y}m_i)^2 = \frac{1}{n − 1} (\sum y^2_i − 2\bar{y} \sum m_i y_i + \bar{y} ^2 \sum m^2_i) = \frac{1}{20 − 1} (460225 − 2\cdot(\frac{2565}{130})\cdot 22285 + (\frac{2565}{130})^2\cdot 1118) \approx 845.56$.
+
+Therefore, $\hat{Var} (\bar{y}) = 0.7922$ and the bound on the error of estimation is 
+
+$B = 2\sqrt{\hat{Var}(\bar{y})} = 1.78$.
+
+Hence, the average repair cost per saw for the past month lies within $19.73 ± 1.78$.
