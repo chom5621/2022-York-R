@@ -2,3 +2,5 @@
 ## Sample Statistics Survey
 
 * sampling with or without replacement
+
+* inclusion probability
